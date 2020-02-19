@@ -1,0 +1,136 @@
+
+.speyside { color: #F28705; }
+.highland { color: #F20505; }
+.islay { color: #025159; }
+.island { color: #03A696; }
+.campbeltown { color: #666; }
+.lowland { color: #F25D27; }
+.other { color: #666; }
+
+.rootContainer {
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+
+  .infoContainer {
+    margin: 2rem 0 0 2rem;
+    text-align: left;
+    flex: 0 1 25%;
+
+    .pageTitle {
+      font-size: 1.8rem;
+      line-height: 1.9rem;
+      font-weight: 500;
+      margin: 1rem 0;
+    }
+    .pageSubtitle {
+      font-size: 1rem;
+      line-height: 1.1rem;
+      font-weight: 400;
+      margin: 1rem 0;
+      font-style: italic;
+    }
+
+    .legendItem {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        content: ' \25CF';
+        font-size: 10px;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  .parentContainer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1 1 75%;
+
+    .outerContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .title {
+        flex: 0 1 auto;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+      }
+
+      .innerContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex: 0 1 auto;
+        position: relative;
+
+        .title {
+          flex: 0 1 5%;
+          position: relative;
+
+          .titleChild {
+            position: absolute;
+            transform: rotate(-90deg);
+            margin-left: -3rem;
+            white-space: nowrap;
+          }
+        }
+
+        .chartContainer {
+          flex: 1 1 50%;
+
+
+          .scatterLabel {
+            font-size: 0.7rem;
+            fill: #666;
+
+            &:hover {
+              fill: #000;
+            }
+          }
+
+
+
+          .tooltipContainer {
+            background-color: #FFF;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0.5rem;
+
+            .name {
+              font-weight: 700;
+              padding-bottom: 0.5rem;
+            }
+            .data {
+
+            }
+          }
+
+
+
+
+
+
+
+        }
+      }
+    }
+  }
+}

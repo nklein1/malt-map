@@ -1,56 +1,23 @@
 import React from 'react';
 import classNames from 'classnames';
-// import { Link } from 'react-router-dom';
 import {
   VictoryChart,
   VictoryScatter,
   VictoryAxis,
-  VictoryContainer,
+  // VictoryContainer,
   VictoryClipContainer,
   VictoryZoomContainer,
   // VictoryTooltip,
   VictoryLabel
 } from 'victory';
 
-import { sampleData } from '../../data/sampleData.js';
+import { getFillColor } from '../../utils/utils.js';
+import { whiskyList } from '../../data/whiskyList.js';
 import styles from './homepage.module.scss';
 
 class HomePage extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // whiskyList: JSON.parse(sessionStorage.getItem('whiskyList')) || null
-    }
-  }
-
-  componentDidMount() {
-    this.setState({ sampleData: sampleData });
-  }
-
-  getFillColor = (data) => {
-    let fill = '#c43a31';
-    if (data.region === 'Speyside') {
-      fill = '#F28705';
-    } else if (data.region === 'Highland') {
-      fill = '#F20505';
-    } else if (data.region === 'Islay') {
-      fill = '#025159';
-    } else if (data.region === 'Island') {
-      fill = '#03A696';
-    } else if (data.region === 'Lowland') {
-      fill = '#F25D27';
-    } else if (data.region === 'Campbeltown') {
-      fill = '#666';
-    } else if (data.region === 'Other') {
-      fill = '#666';
-    }
-    return fill;
-  }
-
   renderChart = (data) => {
-    if (this.state.sampleData) {
+    if (whiskyList) {
       return (
         <VictoryChart
             padding={{top: 10, bottom: 10, left: 25, right: 25}}
@@ -67,13 +34,13 @@ class HomePage extends React.Component {
               style={{ tickLabels: {display: 'none'} }}
           />
             <VictoryScatter
-                data={this.state.sampleData}
+                data={whiskyList}
                 x={'peatScore'}
                 y={'colorScore'}
                 name={'whiskyMap'}
                 domain={{ x: [90, -90], y: [90, -90] }}
                 size={2}
-                style={{ data: { fill: ({ datum }) => this.getFillColor(datum) } }}
+                style={{ data: { fill: ({ datum }) => getFillColor(datum.region) } }}
                 labels={({ datum }) => datum.name}
                 labelComponent={
                   <VictoryLabel
@@ -98,11 +65,12 @@ class HomePage extends React.Component {
     }
   }
 
+          // <div className={styles.pageTitle}>The Scotch Palate Map</div>
   render() {
     return (
       <div className={styles.rootContainer}>
         <div className={styles.infoContainer}>
-          <div className={styles.pageTitle}>The Scotch Palate Map</div>
+          <div className={styles.pageTitle}>Test Data Map</div>
           <div className={styles.pageSubtitle}>(Scroll to Zoom)</div>
           <div className={styles.legendTitle}>Region:</div>
           <div className={styles.legendTitle}>

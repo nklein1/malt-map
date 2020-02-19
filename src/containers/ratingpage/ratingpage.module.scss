@@ -1,0 +1,187 @@
+@import '../../css/variables.module.scss';
+
+.speyside { color: $speyside; }
+.highland { color: $highland; }
+.islay { color: $islay; }
+.island { color: $island; }
+.lowland { color: $lowland; }
+.campbeltown { color: $campbeltown; }
+.other { color: $other; }
+
+.rootContainer {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+
+  .infoContainer {
+    text-align: left;
+    flex: 1 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #ccc;
+
+    padding: 1rem 0;
+
+    .pageTitle {
+      font-size: 1.8rem;
+      line-height: 1.9rem;
+      font-weight: 500;
+      margin-left: 1rem;
+    }
+
+    .pageSubtitle {
+      font-size: 0.9rem;
+      line-height: 1.3rem;
+      font-weight: 400;
+      // margin: 1rem 0 0 0;
+      font-style: italic;
+    }
+
+    .legend {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+
+      .legendTitle {
+        display: flex;
+        align-items: center;
+      }
+
+      .legendColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .legendGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        // grid-auto-rows: minmax(100px, auto);
+      }
+
+      .legendItem {
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+
+        &:before {
+          content: ' \25CF';
+          font-size: 10px;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+
+  .parentContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1 1 75%;
+
+    .outerContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .title {
+        flex: 0 1 auto;
+        font-size: 1.3rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+      }
+
+    }
+  }
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+
+  .rootContainer {
+    .infoContainer {
+      .pageTitle {
+        font-size: 1.2rem;
+        line-height: 1.3rem;
+        margin-left: 0.5rem;
+      }
+
+      .pageSubtitle {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+      }
+
+      .legend {
+        display: flex;
+
+        margin-right: 0.5rem;
+
+
+
+        .legendGrid {
+          display: grid;
+          grid-template-columns: repeat(2, 0.75fr);
+          grid-gap: 2px;
+          // grid-auto-rows: minmax(100px, auto);
+        }
+
+        .legendItem {
+          display: flex;
+          align-items: center;
+          margin-left: 1rem;
+          font-size: 0.9rem;
+          line-height: 1rem;
+
+          &:before {
+            content: ' \25CF';
+            font-size: 10px;
+            margin-right: 0.25rem;
+          }
+        }
+      }
+    }
+
+    .parentContainer {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      // flex: 1 1 75%;
+      // padding: 10px;
+      position: relative;
+
+      .outerContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .title {
+          flex: 0 1 auto;
+          font-size: 1.3rem;
+          line-height: 1.4rem;
+          font-weight: 500;
+        }
+
+      }
+    }
+  }
+}
+
+

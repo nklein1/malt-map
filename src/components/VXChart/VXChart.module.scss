@@ -1,0 +1,63 @@
+@import '../../css/variables.module.scss';
+
+.speyside { color: $speyside; }
+.highland { color: $highland; }
+.islay { color: $islay; }
+.island { color: $island; }
+.lowland { color: $lowland; }
+.campbeltown { color: $campbeltown; }
+.other { color: $other; }
+
+.container {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+
+  .chartLabel {
+    font-size: 1rem;
+    fill: #FFF;
+  }
+
+  .scatterGroup {
+    cursor: default;
+    position: absolute;
+
+    &:hover {
+      cursor: default;
+      .scatterLabel {
+        fill: #000;
+      }
+    }
+
+    .scatterLabel {
+      font-size: 0.8rem;
+      position: relative;
+      fill: #333;
+    }
+  }
+
+  .tooltipContainer {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.25rem;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+
+    .name {
+      font-weight: 700;
+      padding-bottom: 0.5rem;
+    }
+    // .data {
+    //   font-size:
+    // }
+  }
+}
+
+@media screen and (max-width: $mdBreakpoint) {
+  .container {
+    width: auto;
+    padding: 10px;
+  }
+}

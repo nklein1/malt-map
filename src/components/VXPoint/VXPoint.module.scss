@@ -1,0 +1,53 @@
+
+.speyside { color: #F28705; }
+.highland { color: #F20505; }
+.islay { color: #025159; }
+.island { color: #03A696; }
+.campbeltown { color: #666; }
+.lowland { color: #F25D27; }
+.other { color: #666; }
+
+.chartLabel {
+  font-size: 1rem;
+  fill: #FFF;
+}
+
+.scatterGroup {
+    position: absolute;
+    cursor: default;
+  &:hover {
+    cursor: default;
+    .scatterLabel {
+      fill: #000;
+    }
+  }
+
+  .scatterLabel {
+    position: absolute;
+    font-size: 0.7rem;
+    line-height: 0.8rem;
+
+    position: relative;
+    fill: #333;
+  }
+}
+
+.tooltipContainer {
+  background-color: #FFF;
+  // border: 1px solid #ccc;
+  // border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+
+  .name {
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+  }
+  // .data {
+  //   font-size:
+  // }
+}
