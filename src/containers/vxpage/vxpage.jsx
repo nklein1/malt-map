@@ -7,29 +7,14 @@ import { whiskyList } from '../../data/whiskyList.js';
 import styles from './vxpage.module.scss';
 
 class VXPage extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      // whiskyList: JSON.parse(sessionStorage.getItem('whiskyList')) || null
-    }
-  }
-
-  // componentDidMount() {
-  //   this.setState({ whiskyList: whiskyList });
-  // }
-
-  // <div className={styles.pageTitle}>The Scotch Palate Map</div>
   render() {
     console.log('this.props @ PAGE', this.props);
     return (
       <div className={styles.rootContainer}>
         <div className={styles.infoContainer}>
           <div className={styles.pageTitle}>
-            Ace Ticket Test Map
-
-            <div className={styles.pageSubtitle}>(Scroll to Zoom)</div>
+            The Scotch Palate Map
+            <div className={styles.pageSubtitle}>(Click points for more info)</div>
           </div>
           <div className={styles.legend}>
             <div className={styles.legendTitle}>Region:</div>

@@ -99,7 +99,7 @@ class RatingPage extends React.Component {
       <div className={styles.rootContainer}>
         <div className={styles.infoContainer}>
           <div className={styles.pageTitle}>
-            Ace Ticket Test Map
+            The Scotch Value Map
             <div className={styles.pageSubtitle}>(Scroll to Zoom)</div>
           </div>
           <div className={styles.legend}>

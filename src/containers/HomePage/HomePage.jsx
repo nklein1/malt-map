@@ -70,7 +70,7 @@ class HomePage extends React.Component {
     return (
       <div className={styles.rootContainer}>
         <div className={styles.infoContainer}>
-          <div className={styles.pageTitle}>Test Data Map</div>
+          <div className={styles.pageTitle}>The Scotch Palate Map</div>
           <div className={styles.pageSubtitle}>(Scroll to Zoom)</div>
           <div className={styles.legendTitle}>Region:</div>
           <div className={styles.legendTitle}>
